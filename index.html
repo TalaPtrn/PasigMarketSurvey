@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pasig Market</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('Pasig-bg.png');
+      background-repeat: repeat;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: #1e51ae;
+      background-color: rgba(90, 97, 230, 0.7);
+      color: rgb(26, 35, 160);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .date {
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .logo-img {
+      height: 80px;
+      margin-bottom: 5px;
+    }
+
+    .center-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 50px;
+      gap: 15px;
+      
+    }
+
+    .market-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0B2A63;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-bottom: 10px;
+      accent-color: #4c61af;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      width: 85%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .content {
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: left;
+    }
+    
+    
+    .view{
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 30px;
+      background-color: rgba(76, 136, 196, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+    .view button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #1e51ae;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .submit {
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 30px;
+      background-color: rgba(76, 136, 196, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    .submit button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #1e51ae;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-section">
+    <div class="logo-text">MUTYA360 <span class="version">v1.0.0</span></div>
+  </div>
+
+  <img class="logo-img" src="Pasig-logo.png" alt="Pasig Logo">
+
+  <div class="date">APRIL 22, 2025 | TUESDAY</div>
+</div>
+
+<div class="center-title">
+  <div class="market-title"><b>MUTYA NG PASIG MEGA MARKET</b></div>
+</div>
+
+<form id="surveyForm">
+  <div class="content">
+    <h1>WELCOME TO PASIG PUBLIC MARKET</h1>
+    <p align="center">Please take time to take this survey for your registration!</p>
+  </div>
+
+  <div class="content">
+    <h2 align="left">Enter your Business Name</h2>
+    <input type="text" id="businessName" placeholder="Business Name" required />
+  </div>
+
+  <div class="content">
+    <h2 align="left">What produce do you sell?</h2>
+    <label for="produce">Select produce:</label><br>
+    <select id="produce" name="produce" required style="width: 100%; padding: 10px; font-size: 16px;">
+      <option value="" disabled selected>Select an option</option>
+      <option value="meat">Meat (Beef, Chicken, Pork)</option>
+      <option value="vegetables">Vegetables</option>
+      <option value="fish">Fish</option>
+    </select>
+  </div>
+
+  <div class="content">
+    <h2 align="left">Enter your Permit Number</h2>
+    <input type="text" id="permitNumber" placeholder="Permit Number" required />
+  </div>
+
+  <div class="content">
+    <h2 align="left">Sanitary Practices</h2>
+    <input type="radio" id="good" name="sanitary" value="Good" required>
+    <label for="good">Good</label><br>
+    <input type="radio" id="fair" name="sanitary" value="Fair">
+    <label for="fair">Fair</label><br>
+    <input type="radio" id="poor" name="sanitary" value="Poor">
+    <label for="poor">Poor</label><br>
+  </div>
+
+  <div class="content">
+    <h2 align="left">Stall Cleanliness</h2>
+    <input type="checkbox" id="daily" name="cleanliness" value="Daily Cleaning">
+    <label for="daily">Daily Cleaning</label><br>
+    <input type="checkbox" id="waste" name="cleanliness" value="Waste Disposal">
+    <label for="waste">Waste Disposal</label><br>
+  </div>
+
+  <div class="submit">
+    <button type="button" id="downloadPDF">Download PDF</button>
+    <button type="submit">Submit Survey</button>
+
+  </div>
+
+  <div class="view">
+    <button type="button" id="viewResponses">View All Responses</button>
+  </div>
+</form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  const { jsPDF } = window.jspdf;
+
+  document.getElementById('surveyForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const businessName = document.getElementById('businessName').value.trim();
+    const produce = document.getElementById('produce').value;
+    const permitNumber = document.getElementById('permitNumber').value.trim();
+    const sanitary = document.querySelector('input[name="sanitary"]:checked')?.value;
+
+    const cleanliness = [];
+    document.querySelectorAll('input[name="cleanliness"]:checked').forEach((checkbox) => {
+        cleanliness.push(checkbox.value);
+    });
+
+    if (!sanitary) {
+        alert('Please select a sanitary practice.');
+        return;
+    }
+
+    const response = {
+        businessName,
+        produce,
+        permitNumber,
+        sanitary,
+        cleanliness
+    };
+
+    let responses = JSON.parse(localStorage.getItem('surveyResponses')) || [];
+    responses.push(response);
+    localStorage.setItem('surveyResponses', JSON.stringify(responses));
+
+
+    window.latestResponse = response;
+
+    alert('Thank you! Your survey has been saved.');
+});
+
+document.getElementById('viewResponses').addEventListener('click', function (e) {
+    e.preventDefault();  
+
+    const password = prompt('Please enter the password to view the responses.');
+    if (password === 'admin') {
+        window.location.href = 'response.html'; 
+    } else {
+        alert('Incorrect password!');
+    }
+});
+
+document.getElementById('downloadPDF').addEventListener('click', function () {
+    if (!window.latestResponse) {
+        alert('Please submit the form first.');
+        return;
+    }
+
+    const { businessName, produce, permitNumber, sanitary, cleanliness } = window.latestResponse;
+
+    const doc = new jsPDF();
+    doc.setFontSize(14);
+    doc.text('Pasig Market Survey Response', 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Business Name: ${businessName}`, 20, 40);
+    doc.text(`Produce Sold: ${produce}`, 20, 50);
+    doc.text(`Permit Number: ${permitNumber}`, 20, 60);
+    doc.text(`Sanitary Practice: ${sanitary}`, 20, 70);
+    doc.text(`Stall Cleanliness: ${cleanliness.join(', ') || 'None'}`, 20, 80);
+
+    const fileName = `${businessName.replace(/\s+/g, '_')}_Survey.pdf`;
+    doc.save(fileName);
+});
+
+
+</script>
+
+
+</body>
+</html>
